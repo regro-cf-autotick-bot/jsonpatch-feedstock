@@ -1,16 +1,16 @@
 {% set name = "jsonpatch" %}
-{% set version = "1.33" %}
+{% set version = "1.36" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jsonpatch-{{ version }}.tar.gz
-  sha256: 9fcd4009c41e6d12348b4a0ff2563ba56a2923a7dfee731d004e212e1ee5030c
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/jsonpatch-{{ version }}.tar.gz
+  sha256: 7e110cb3c5a1c8768f7170bf8fb9887c4aa575fba74c95239e868b494bd9a522
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - jsonpointer >=1.9
+    - jsonpointer >=3.2
 
 test:
   imports:
